@@ -1,0 +1,19 @@
+body {
+    background-color: #E6EDF6;
+}
+
+.header {
+    height: 50px;
+    background-color: black;
+    border-bottom: 2px solid white;
+    position: sticky;
+    top: 0;
+}
+
+.main__block {
+
+}
+
+.block {
+    height: 100vh;
+}
