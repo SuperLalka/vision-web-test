@@ -1,6 +1,43 @@
+<style>
+    .block__container {
+        align-items: center;
+        background-color: {{ block.content_object.container_bg_color|default:"initial" }};
+        display: flex;
+        justify-content: center;
+        height: inherit;
+    }
 
-{% block content %}
-  <div>
+    .block__content-block {
+        align-items: center;
+        background: {{ block.content_object.content_bg_color|default:"orange" }};
+        border: 3px solid black;
+        display: flex;
+        flex-flow: column;
+        height: 30vh;
+        padding: 20px;
+        width: 100%;
+    }
 
+    .block__content-title {
+        font-size: {{ block.content_object.title_font_size|default:"50px" }};
+        color: {{ block.content_object.title_font_color|default:"black" }};
+    }
+
+    .block__content-text {
+        font-size: {{ block.content_object.text_font_size|default:"30px" }};
+        color: {{ block.content_object.text_font_color|default:"black" }};
+    }
+
+    .block__content-button {
+        font-size: {{ block.content_object.button_font_size|default:"20px" }};
+        color: {{ block.content_object.button_font_color|default:"black" }};
+    }
+</style>
+
+<div class="block__container">
+  <div class="block__content-block">
+    <h3 class="block__content-title">{{ block.content_object.title }}</h3>
+    <p class="block__content-text">{{ block.content_object.text }}</p>
+    <button class="block__content-button btn">{{ block.content_object.button_text }}</button>
   </div>
-{% endblock %}
+</div>

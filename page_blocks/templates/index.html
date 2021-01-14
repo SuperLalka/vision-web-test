@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   {% load static %}
+  {% load crispy_forms_tags %}
+
   <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <script src="//code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -17,18 +19,73 @@
   <title>Demo blocks</title>
 </head>
 <body>
-<header class="header">
+  <header class="header">
+    <button type="button" class="cart-item__numbers-button btn" data-toggle="modal"
+            data-target="#AuthModal">Авторизация</button>
+    <button type="button" class="cart-item__numbers-button btn" data-toggle="modal"
+            data-target="#RegModal">Регистрация</button>
+  </header>
+  <main class="main">
+    {% for block in blocks %}
+      <div class="main__block block">
+        {% include block.content_object.get_template_name %}
+      </div>
+    {% endfor %}
+  </main>
+  <footer class="footer">
 
-</header>
-<main class="main">
-  {% for block in blocks %}
-    <div class="main__block block">
-      {% include block.content_object.get_template_name %}
+  </footer>
+  <!-- Modal -->
+  <div class="modal fade" id="AuthModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+       aria-labelledby="AuthModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="AuthModalLabel">Авторизация</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="authentication__form" id="authentication-form"
+                action="{% url 'page_blocks:authentication' %}" method="post">
+            {% csrf_token %}
+            {{ auth_form|crispy }}
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Отмена</button>
+          <button type="submit" class="authentication__button btn btn-lg btn-primary"
+                  form="authentication-form">Авторизироваться</button>
+        </div>
+      </div>
     </div>
-  {% endfor %}
-</main>
-<footer class="footer">
-
-</footer>
+  </div>
+  <div class="modal fade" id="RegModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+       aria-labelledby="RegModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="RegModalLabel">Регистрация</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="registration__form" id="registration-form"
+                action="{% url 'page_blocks:registration' %}" method="post">
+            {% csrf_token %}
+            {{ reg_form|crispy }}
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Отмена</button>
+          <button type="submit" class="registration__button btn btn-lg btn-primary"
+                  form="registration-form">Зарегистрироваться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal end -->
 </body>
 </html>

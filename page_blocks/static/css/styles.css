@@ -4,10 +4,14 @@ body {
 
 .header {
     height: 50px;
-    background-color: black;
+    background-color: gainsboro;
     border-bottom: 2px solid white;
     position: sticky;
     top: 0;
+}
+
+.authentication__form {
+
 }
 
 .main__block {
