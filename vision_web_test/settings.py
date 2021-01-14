@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'page_blocks',
     # Third party modules
     'rest_framework',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from .models import (
-    Block
+    Block,
+    User
 )
 from .elements_models import (
     BlockWithImageAndList,
