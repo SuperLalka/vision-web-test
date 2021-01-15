@@ -1,6 +1,90 @@
+<style>
+    .block-il__container {
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: 40vw;
+        background-position: left bottom;
+        display: flex;
+        justify-content: center;
+        height: inherit;
+    }
 
-{% block content %}
-  <div>
+    .block-il__content-block {
+        border: 3px solid black;
+        display: flex;
+        min-height: 100%;
+        padding: 20px;
+        width: 100%;
+    }
 
+    .block-il__title-block,
+    .block-il__list-block {
+        padding: 30px;
+        width: 50%;
+    }
+
+    .block-il__list-block {
+        align-items: flex-end;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+    }
+
+    .block-il__content-title {
+        margin: auto;
+        text-align: center;
+    }
+
+    .block-il__text-wrapper {
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        display: inline-flex;
+        margin: 10px 0;
+    }
+
+    .block-il__aside-decor {
+        border-bottom-right-radius: 25px;
+        width: 30px;
+    }
+
+    .block-il__text-block {
+        padding: 10px;
+    }
+
+    .block-il__content-text {
+        line-height: 1;
+        margin: 0;
+        text-align: end;
+    }
+</style>
+
+{% with block.content_object as element %}
+  <div class="block-il__container"
+       style="background-color: {{ element.container_bg_color|default:"#2ec4b6" }};
+           background-image: url({{ element.images.url }})">
+    <div class="block-il__content-block">
+      <div class="block-il__title-block">
+        <h3 class="block-il__content-title"
+            style="font-size: {{ element.title_font_size|default:"70px" }};
+                color: {{ element.title_font_color|default:"white" }}">
+          {{ element.title }}</h3>
+      </div>
+      <div class="block-il__list-block">
+        {% for item in element.list_items %}
+          <div class="block-il__text-wrapper"
+               style="background-color: {{ element.content_bg_color_major|default:"white" }}">
+            <div class="block-il__aside-decor"
+                 style="background-color: {{ element.container_bg_color|default:"#2ec4b6" }}"></div>
+            <div class="block-il__text-block"
+                 style="background-color: {{ element.content_bg_color_major|default:"white" }}">
+              <p class="block-il__content-text"
+                 style="font-size: {{ element.text_font_size|default:"35px" }};
+                     color: {{ element.text_font_color_major|default:"black" }}">
+                {{ item }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
   </div>
-{% endblock %}
+{% endwith %}

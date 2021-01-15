@@ -1,6 +1,80 @@
+<style>
+    .block-ttib__container {
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: 40vw;
+        background-position: right bottom;
+        display: flex;
+        justify-content: center;
+        height: inherit;
+    }
 
-{% block content %}
-  <div>
+    .block-ttib__content-block {
+        align-items: center;
+        border: 3px solid black;
+        display: flex;
+        flex-flow: column;
+        min-height: 100%;
+        padding: 20px;
+        width: 100%;
+    }
 
+    .block-ttib__content-title {
+        margin: auto;
+    }
+
+    .block-ttib__footer-block {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        margin: auto auto auto 0;
+        min-height: 40vh;
+        padding: 30px;
+        text-align: center;
+        width: 50%;
+    }
+
+    .block-ttib__button-block {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .block-ttib__content-button {
+        border-radius: 15px;
+        margin-top: auto;
+        min-height: 70px;
+        min-width: 20vw;
+    }
+</style>
+
+{% with block.content_object as element %}
+  <div class="block-ttib__container"
+       style="background-color: {{ element.container_bg_color|default:"white" }};
+           background-image: url({{ element.images.url }})">
+    <div class="block-ttib__content-block"
+         style="background-color: {{ element.content_bg_color_major|default:"transparent" }}">
+      <h3 class="block-ttib__content-title"
+          style="font-size: {{ element.title_font_size|default:"70px" }};
+              color: {{ element.title_font_color|default:"black" }}">
+        {{ element.title }}</h3>
+      <div class="block-ttib__footer-block">
+        <p class="block-ttib__content-text"
+           style="font-size: {{ element.text_font_size|default:"35px" }};
+               color: {{ element.text_font_color_major|default:"black" }}">
+          {{ element.text }}</p>
+        <div class="block-ttib__button-block">
+          <button class="block-ttib__content-button btn"
+                  style="background-color: {{ element.button_bg_color|default:"darkviolet" }};
+                      font-size: {{ element.button_font_size|default:"25px" }};
+                      color: {{ element.button_font_color|default:"white" }}">
+            {{ element.first_button_text }}</button>
+          <button class="block-ttib__content-button btn"
+                  style="background-color: {{ element.button_bg_color|default:"darkviolet" }};
+                      font-size: {{ element.button_font_size|default:"25px" }};
+                      color: {{ element.button_font_color|default:"white" }}">
+            {{ element.second_button_text }}</button>
+        </div>
+      </div>
+    </div>
   </div>
-{% endblock %}
+{% endwith %}

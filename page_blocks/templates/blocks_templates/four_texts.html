@@ -1,6 +1,57 @@
+<style>
+    .block-ft__container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: inherit;
+        flex-wrap: wrap;
+    }
 
-{% block content %}
-  <div>
+    .block-ft__content-block {
+        align-items: center;
+        border: 3px solid black;
+        border-radius: 25px;
+        display: flex;
+        flex-basis: 45%;
+        margin: 2%;
+        height: 40vh;
+        overflow: auto;
+        padding: 20px;
+        text-align: center;
+        text-overflow: ellipsis;
+    }
+</style>
 
+{% with block.content_object as element %}
+  <div class="block-ft__container"
+       style="background-color: {{ element.container_bg_color|default:"initial" }}">
+    <div class="block-ft__content-block"
+         style="background-color: {{ element.content_bg_color_major|default:"orange" }};
+             color: {{ element.text_font_color_major|default:"black" }}">
+      <p class="block-ft__content-text"
+         style="font-size: {{ element.text_font_size|default:"35px" }}">
+        {{ element.top_left_text }}</p>
+    </div>
+    <div class="block-ft__content-block"
+         style="background-color: {{ element.content_bg_color_minor|default:"black" }};
+             color: {{ element.text_font_color_minor|default:"white" }}">
+      <p class="block-ft__content-text"
+         style="font-size: {{ element.text_font_size|default:"35px" }}">
+        {{ element.top_right_text }}</p>
+    </div>
+    <div class="block-ft__content-block"
+         style="background-color: {{ element.content_bg_color_minor|default:"black" }};
+             color: {{ element.text_font_color_minor|default:"white" }}">
+      <p class="block-ft__content-text"
+         style="font-size: {{ element.text_font_size|default:"35px" }}">
+        {{ element.bottom_right_text }}</p>
+    </div>
+    <div class="block-ft__content-block"
+         style="background-color: {{ element.content_bg_color_major|default:"orange" }};
+             color: {{ element.text_font_color_major|default:"black" }}">
+      <p class="block-ft__content-text"
+         style="font-size: {{ element.text_font_size|default:"35px" }}">
+        {{ element.bottom_left_text }}</p>
+    </div>
   </div>
-{% endblock %}
+{% endwith %}

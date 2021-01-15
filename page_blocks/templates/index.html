@@ -17,13 +17,21 @@
           crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <title>Demo blocks</title>
+
 </head>
 <body>
   <header class="header">
-    <button type="button" class="cart-item__numbers-button btn" data-toggle="modal"
-            data-target="#AuthModal">Авторизация</button>
-    <button type="button" class="cart-item__numbers-button btn" data-toggle="modal"
-            data-target="#RegModal">Регистрация</button>
+    {% if user.is_anonymous %}
+      <button type="button" class="header__button" data-toggle="modal"
+              data-target="#AuthModal">Авторизация</button>
+      <button type="button" class="header__button" data-toggle="modal"
+              data-target="#RegModal">Регистрация</button>
+    {% else %}
+      <a href="{% url 'page_blocks:logout' %}">
+        <button type="button" class="header__button">Разлогиниться</button>
+      </a>
+      <div class="header__user-block">Вы авторизованы как {{ user }}</div>
+    {% endif %}
   </header>
   <main class="main">
     {% for block in blocks %}
@@ -33,11 +41,12 @@
     {% endfor %}
   </main>
   <footer class="footer">
-
+    <button class="footer__feedback-button" type="button" data-toggle="modal"
+            data-target="#FeedbackModal">Связаться <br>с<br> администрацией</button>
   </footer>
   <!-- Modal -->
-  <div class="modal fade" id="AuthModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
-       aria-labelledby="AuthModalLabel" aria-hidden="true">
+  <div class="modal fade" id="AuthModal" data-backdrop="static" data-keyboard="false"
+       tabindex="-1" role="dialog" aria-labelledby="AuthModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -55,14 +64,14 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Отмена</button>
-          <button type="submit" class="authentication__button btn btn-lg btn-primary"
+          <button type="submit" class="btn btn-lg btn-primary"
                   form="authentication-form">Авторизироваться</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal fade" id="RegModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
-       aria-labelledby="RegModalLabel" aria-hidden="true">
+  <div class="modal fade" id="RegModal" data-backdrop="static" data-keyboard="false"
+       tabindex="-1" role="dialog" aria-labelledby="RegModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -80,8 +89,33 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Отмена</button>
-          <button type="submit" class="registration__button btn btn-lg btn-primary"
+          <button type="submit" class="btn btn-lg btn-primary"
                   form="registration-form">Зарегистрироваться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="FeedbackModal" data-backdrop="static" data-keyboard="false"
+       tabindex="-1" role="dialog" aria-labelledby="FeedbackLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="FeedbackLabel">Оставить фидбек</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="feedback__form" id="feedback-form"
+                action="{% url 'page_blocks:feedback' %}" method="post">
+            {% csrf_token %}
+            {{ feedback_form|crispy }}
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Отмена</button>
+          <button type="submit" class="btn btn-lg btn-primary"
+                  form="feedback-form">Отправить</button>
         </div>
       </div>
     </div>

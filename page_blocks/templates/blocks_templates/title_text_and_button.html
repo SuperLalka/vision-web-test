@@ -1,43 +1,52 @@
 <style>
-    .block__container {
+    .block-ttb__container {
         align-items: center;
-        background-color: {{ block.content_object.container_bg_color|default:"initial" }};
         display: flex;
         justify-content: center;
         height: inherit;
     }
 
-    .block__content-block {
+    .block-ttb__content-block {
         align-items: center;
-        background: {{ block.content_object.content_bg_color|default:"orange" }};
         border: 3px solid black;
         display: flex;
         flex-flow: column;
-        height: 30vh;
-        padding: 20px;
+        min-height: 30vh;
+        padding: 30px;
+        text-indent: 30px;
         width: 100%;
     }
 
-    .block__content-title {
-        font-size: {{ block.content_object.title_font_size|default:"50px" }};
-        color: {{ block.content_object.title_font_color|default:"black" }};
+    .block-ttb__content-title {
+        padding: 10px;
     }
 
-    .block__content-text {
-        font-size: {{ block.content_object.text_font_size|default:"30px" }};
-        color: {{ block.content_object.text_font_color|default:"black" }};
-    }
-
-    .block__content-button {
-        font-size: {{ block.content_object.button_font_size|default:"20px" }};
-        color: {{ block.content_object.button_font_color|default:"black" }};
+    .block-ttb__content-button {
+        border-radius: 15px;
+        margin-top: auto;
+        min-height: 70px;
+        min-width: 20vw;
     }
 </style>
 
-<div class="block__container">
-  <div class="block__content-block">
-    <h3 class="block__content-title">{{ block.content_object.title }}</h3>
-    <p class="block__content-text">{{ block.content_object.text }}</p>
-    <button class="block__content-button btn">{{ block.content_object.button_text }}</button>
+{% with block.content_object as element %}
+  <div class="block-ttb__container"
+       style="background-color: {{ element.container_bg_color|default:"initial" }}">
+    <div class="block-ttb__content-block"
+         style="background-color: {{ element.content_bg_color_major|default:"orange" }}">
+      <h3 class="block-ttb__content-title"
+          style="font-size: {{ element.title_font_size|default:"50px" }};
+              color: {{ element.title_font_color|default:"black" }}">
+        {{ element.title }}</h3>
+      <p class="block-ttb__content-text"
+         style="font-size: {{ element.text_font_size|default:"25px" }};
+             color: {{ element.text_font_color_major|default:"black" }}">
+        {{ element.text }}</p>
+      <button class="block-ttb__content-button btn"
+              style="background-color: {{ element.button_bg_color|default:"darkviolet" }};
+                  font-size: {{ element.button_font_size|default:"25px" }};
+                  color: {{ element.button_font_color|default:"white" }}">
+        {{ element.button_text }}</button>
+    </div>
   </div>
-</div>
+{% endwith %}
