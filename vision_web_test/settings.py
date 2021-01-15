@@ -59,6 +59,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'vision_web_test.wsgi.application'
 
+# Email
+
+PROJECT_EMAIL = 'vision-web@gmail.com'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # Database
 
 DATABASES = {
@@ -106,6 +112,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'page_blocks/static')
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'page_blocks/media')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

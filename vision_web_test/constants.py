@@ -14,6 +14,7 @@ ELEMENTS_TEMPLATES_CHOICES = [
 ]
 
 USER_GROUP = [
+    ('reader', 'Reader'),
     ('client', 'Client'),
     ('admin', 'Admin'),
 ]
