@@ -15,7 +15,7 @@ optional = {'null': True, 'blank': True}
 class Block(models.Model):
     tag = models.SlugField()
     sorting = models.PositiveSmallIntegerField(default=0, help_text=BLOCKS_SORTING)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
 
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE,
                                      related_name='content_type_block', editable=False,
@@ -27,12 +27,12 @@ class Block(models.Model):
         return self.tag
 
     class Meta:
-        ordering = ['is_active', 'sorting']
+        ordering = ['is_active', '-sorting']
 
 
 class User(AbstractUser):
     user_group = models.CharField(max_length=10, choices=constants.USER_GROUP,
-                                  help_text='Select user group', default='Client')
+                                  help_text='Select user group', default='Reader')
 
     def __str__(self):
         return self.username
