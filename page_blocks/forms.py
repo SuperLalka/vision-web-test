@@ -17,7 +17,7 @@ class AuthorizationForm(forms.Form):
 
 class RegistrationForm(forms.ModelForm):
     username = forms.CharField(label="Представьтесь", max_length=60)
-    email = forms.EmailField(label="Ввведите ваш E-mail", max_length=30)
+    email = forms.EmailField(label="Введите ваш E-mail", max_length=30)
     password = forms.CharField(label="Введите пароль", max_length=30, widget=forms.PasswordInput)
     password_check = forms.CharField(label="Пожалуйста, повторите ваш пароль", max_length=30,
                                      widget=forms.PasswordInput)
@@ -42,3 +42,7 @@ class RegistrationForm(forms.ModelForm):
         if self.cleaned_data['password'] != self.cleaned_data['password_check']:
             raise forms.ValidationError('Введённые пароли не совпадают')
         return self.cleaned_data['password']
+
+
+class FeedbackForm(forms.Form):
+    text = forms.CharField(label="Введите текст обратной связи", max_length=1000, widget=forms.Textarea)
