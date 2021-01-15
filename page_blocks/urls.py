@@ -13,5 +13,6 @@ auth_urls = [
 app_name = 'page_blocks'
 urlpatterns = [
     path('auth/', include(auth_urls)),
+    path('feedback', views.feedback, name='feedback'),
     path('', views.index, name='index'),
 ]
