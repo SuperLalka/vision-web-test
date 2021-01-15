@@ -1,0 +1,214 @@
+[
+  {
+    "model": "page_blocks.block",
+    "pk": 1,
+    "fields": {
+      "tag": "FIRST",
+      "sorting": 0,
+      "is_active": true,
+      "content_type": 8,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "page_blocks.block",
+    "pk": 2,
+    "fields": {
+      "tag": "four_squares",
+      "sorting": 1,
+      "is_active": true,
+      "content_type": 6,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "page_blocks.block",
+    "pk": 3,
+    "fields": {
+      "tag": "THIRD",
+      "sorting": 0,
+      "is_active": true,
+      "content_type": 9,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "page_blocks.block",
+    "pk": 4,
+    "fields": {
+      "tag": "four_squares_double",
+      "sorting": 1,
+      "is_active": true,
+      "content_type": 6,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "page_blocks.block",
+    "pk": 7,
+    "fields": {
+      "tag": "default_image_and_list",
+      "sorting": 3,
+      "is_active": true,
+      "content_type": 7,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "page_blocks.block",
+    "pk": 8,
+    "fields": {
+      "tag": "Cpt_Cook",
+      "sorting": 2,
+      "is_active": true,
+      "content_type": 7,
+      "object_id": 3
+    }
+  },
+  {
+    "model": "page_blocks.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$cYjIvM14eMSm$tIhiKgJXjrvTyYwoEvr9lnoy0Sg6jxpgR/NaZLTIGzw=",
+      "last_login": "2021-01-15T12:46:59.030Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@mail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-01-15T12:46:52.788Z",
+      "user_group": "Reader",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "page_blocks.blockwithimageandlist",
+    "pk": 1,
+    "fields": {
+      "container_bg_color": null,
+      "content_bg_color_major": null,
+      "content_bg_color_minor": null,
+      "title_font_size": null,
+      "title_font_color": null,
+      "text_font_size": null,
+      "text_font_color_major": null,
+      "text_font_color_minor": null,
+      "button_bg_color": null,
+      "button_font_size": null,
+      "button_font_color": null,
+      "title": "Lorem ipsum dolor sit amet",
+      "images": "images/Asset_91.svg",
+      "list_items": "[\"\\u041f\\u0451\\u0441\\u0438\\u043a \\u0443\\u0441\\u0442\\u0430\\u043b 1\", \"\\u041f\\u0451\\u0441\\u0438\\u043a \\u0443\\u0441\\u0442\\u0430\\u043b \\u0434\\u0435\\u043b\\u0430\\u0442\\u044c 2\", \"\\u041f\\u0451\\u0441\\u0438\\u043a \\u0443\\u0441\\u0442\\u0430\\u043b \\u0434\\u0435\\u043b\\u0430\\u0442\\u044c \\u0444\\u0438\\u0430\\u0441\\u043a\\u043e 3\", \"\\u041f\\u0451\\u0441\\u0438\\u043a \\u0443\\u0441\\u0442\\u0430\\u043b \\u0434\\u0435\\u043b\\u0430\\u0442\\u044c \\u0444\\u0438\\u0430\\u0441\\u043a\\u043e 4\", \"\\u041f\\u0451\\u0441\\u0438\\u043a \\u043d\\u0435\\u0432\\u0435\\u0440\\u043e\\u044f\\u0442\\u043d\\u043e \\u0443\\u0441\\u0442\\u0430\\u043b \\u0434\\u0435\\u043b\\u0430\\u0442\\u044c \\u0444\\u0438\\u0430\\u0441\\u043a\\u043e 5\"]"
+    }
+  },
+  {
+    "model": "page_blocks.blockwithimageandlist",
+    "pk": 3,
+    "fields": {
+      "container_bg_color": "cornflowerblue",
+      "content_bg_color_major": "darkseagreen",
+      "content_bg_color_minor": null,
+      "title_font_size": null,
+      "title_font_color": null,
+      "text_font_size": null,
+      "text_font_color_major": "white",
+      "text_font_color_minor": null,
+      "button_bg_color": null,
+      "button_font_size": null,
+      "button_font_color": null,
+      "title": "А почему капитан Кук?",
+      "images": "images/ship.svg",
+      "list_items": "[\"\\u041a\\u0430\\u043f\\u0438\\u0442\\u0430\\u043d \\u041a\\u0443\\u043a \\u0431\\u044b\\u043b \\u043d\\u0435 \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0441\\u0430\\u043c\\u043e\\u0439 \\u0438\\u0437\\u0432\\u0435\\u0441\\u0442\\u043d\\u043e\\u0439 \\u0442\\u0440\\u0430\\u043f\\u0435\\u0437\\u043e\\u0439 \\u0434\\u0438\\u043a\\u0430\\u0440\\u0435\\u0439\", \"\\u041f\\u0440\\u0435\\u0436\\u0434\\u0435 \\u0432\\u0441\\u0435\\u0433\\u043e \\u043a\\u0430\\u043f\\u0438\\u0442\\u0430\\u043d \\u0414\\u0436\\u0435\\u0439\\u043c\\u0441 \\u041a\\u0443\\u043a \\u0431\\u044b\\u043b \\u0438\\u0437\\u0432\\u0435\\u0441\\u0442\\u043d\\u044b\\u043c \\u043f\\u0443\\u0442\\u0435\\u0448\\u0435\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u0438\\u043a\\u043e\\u043c \\u0438 \\u043f\\u0435\\u0440\\u0432\\u043e\\u043e\\u0442\\u043a\\u0440\\u044b\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u043c\", \"\\u041a\\u0430\\u043f\\u0438\\u0442\\u0430\\u043d \\u041a\\u0443\\u043a \\u0441\\u0442\\u0430\\u043b \\u043f\\u0435\\u0440\\u0432\\u044b\\u043c \\u0447\\u0435\\u043b\\u043e\\u0432\\u0435\\u043a\\u043e\\u043c \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0439 \\u043f\\u043e\\u0431\\u044b\\u0432\\u0430\\u043b \\u043d\\u0430 \\u0432\\u0441\\u0435\\u0445 \\u043a\\u043e\\u043d\\u0442\\u0438\\u043d\\u0435\\u043d\\u0442\\u0430\\u0445 \\u043a\\u0440\\u043e\\u043c\\u0435 \\u0410\\u043d\\u0442\\u0430\\u0440\\u043a\\u0442\\u0438\\u0434\\u044b\"]"
+    }
+  },
+  {
+    "model": "page_blocks.blockwithfourtexts",
+    "pk": 1,
+    "fields": {
+      "container_bg_color": null,
+      "content_bg_color_major": null,
+      "content_bg_color_minor": null,
+      "title_font_size": null,
+      "title_font_color": null,
+      "text_font_size": null,
+      "text_font_color_major": null,
+      "text_font_color_minor": null,
+      "button_bg_color": null,
+      "button_font_size": null,
+      "button_font_color": null,
+      "top_left_text": "Morbi sed blandit sem. Fusce non dolor vitae orci tristique venenatis. Curabitur sit amet dapibus risus. Morbi dignissim felis vitae enim pharetra rutrum. Donec enim urna, volutpat ac ipsum et, venenatis feugiat velit.",
+      "top_right_text": "Vestibulum molestie augue est, et ornare libero volutpat eu. Nulla ut risus scelerisque, fermentum lacus eu, luctus metus. Sed nec consectetur libero. Maecenas blandit, augue eget faucibus tempus, neque mauris sollicitudin ipsum, ut fringilla arcu elit a",
+      "bottom_left_text": "Suspendisse scelerisque sodales elit eu posuere. Curabitur dapibus erat a ornare hendrerit. Fusce sit amet est commodo, convallis diam quis, laoreet ex. Donec iaculis condimentum neque id pretium. Interdum et malesuada fames ac ante ipsum primis in faucib",
+      "bottom_right_text": "Fusce est eros, ultrices et lorem sit amet, malesuada condimentum sapien. Aenean massa tellus, finibus nec lectus nec, elementum consectetur dui."
+    }
+  },
+  {
+    "model": "page_blocks.blockwithfourtexts",
+    "pk": 2,
+    "fields": {
+      "container_bg_color": "lightseagreen",
+      "content_bg_color_major": "purple",
+      "content_bg_color_minor": "coral",
+      "title_font_size": null,
+      "title_font_color": null,
+      "text_font_size": "50px",
+      "text_font_color_major": "white",
+      "text_font_color_minor": "black",
+      "button_bg_color": null,
+      "button_font_size": null,
+      "button_font_color": null,
+      "top_left_text": "Пёсик устал делать фиаско",
+      "top_right_text": "Пёсик устал делать фиаско",
+      "bottom_left_text": "Пёсик устал делать фиаско",
+      "bottom_right_text": "Пёсик устал делать фиаско"
+    }
+  },
+  {
+    "model": "page_blocks.blockwithtitletextandbutton",
+    "pk": 1,
+    "fields": {
+      "container_bg_color": null,
+      "content_bg_color_major": null,
+      "content_bg_color_minor": null,
+      "title_font_size": null,
+      "title_font_color": null,
+      "text_font_size": null,
+      "text_font_color_major": null,
+      "text_font_color_minor": null,
+      "button_bg_color": null,
+      "button_font_size": null,
+      "button_font_color": null,
+      "title": "Lorem Ipsum Title",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet nulla ut orci elementum dignissim. Donec convallis enim in tortor volutpat fermentum. Praesent id accumsan erat. Etiam at ligula tortor. Proin at tellus vitae nisi maximus blandit. Sed non viverra nulla. Maecenas sodales et ligula sit amet convallis. Nam faucibus fringilla dolor, nec bibendum nisl fermentum et. Sed condimentum mauris dolor, eget semper nibh luctus sit amet. Aenean sagittis, nibh quis consectetur lacinia, nisl erat ullamcorper urna, eu commodo risus nibh id leo. Proin quis urna sed mauris ultrices semper sit amet sed quam. Nullam sollicitudin euismod quam, eu iaculis metus pharetra id.",
+      "button_text": "Отправить заявку",
+      "button_action": null
+    }
+  },
+  {
+    "model": "page_blocks.blockwithtitletextimageandbuttons",
+    "pk": 1,
+    "fields": {
+      "container_bg_color": null,
+      "content_bg_color_major": null,
+      "content_bg_color_minor": null,
+      "title_font_size": null,
+      "title_font_color": null,
+      "text_font_size": null,
+      "text_font_color_major": null,
+      "text_font_color_minor": null,
+      "button_bg_color": null,
+      "button_font_size": null,
+      "button_font_color": null,
+      "images": "images/Asset_9.svg",
+      "title": "Lorem ipsum dolor sit amet",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet nulla ut orci elementum dignissim.",
+      "first_button_text": "Начать учиться",
+      "first_button_action": null,
+      "second_button_text": "Начать бесплатно",
+      "second_button_action": null
+    }
+  }
+]
