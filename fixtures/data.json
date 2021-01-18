@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "tag": "FIRST",
-      "sorting": 0,
+      "sorting": 2,
       "is_active": true,
       "content_type": 8,
       "object_id": 1
@@ -48,7 +48,7 @@
     "pk": 7,
     "fields": {
       "tag": "default_image_and_list",
-      "sorting": 3,
+      "sorting": 4,
       "is_active": true,
       "content_type": 7,
       "object_id": 1
@@ -59,10 +59,32 @@
     "pk": 8,
     "fields": {
       "tag": "Cpt_Cook",
-      "sorting": 2,
+      "sorting": 3,
       "is_active": true,
       "content_type": 7,
       "object_id": 3
+    }
+  },
+  {
+    "model": "page_blocks.block",
+    "pk": 9,
+    "fields": {
+      "tag": "DOUBLE_3",
+      "sorting": 2,
+      "is_active": true,
+      "content_type": 8,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "page_blocks.block",
+    "pk": 10,
+    "fields": {
+      "tag": "DOUBLE_4",
+      "sorting": 0,
+      "is_active": true,
+      "content_type": 9,
+      "object_id": 2
     }
   },
   {
@@ -70,7 +92,7 @@
     "pk": 1,
     "fields": {
       "password": "pbkdf2_sha256$216000$cYjIvM14eMSm$tIhiKgJXjrvTyYwoEvr9lnoy0Sg6jxpgR/NaZLTIGzw=",
-      "last_login": "2021-01-15T12:46:59.030Z",
+      "last_login": "2021-01-18T10:56:23.293Z",
       "is_superuser": true,
       "username": "admin",
       "first_name": "",
@@ -160,10 +182,10 @@
       "button_bg_color": null,
       "button_font_size": null,
       "button_font_color": null,
-      "top_left_text": "Пёсик устал делать фиаско",
-      "top_right_text": "Пёсик устал делать фиаско",
-      "bottom_left_text": "Пёсик устал делать фиаско",
-      "bottom_right_text": "Пёсик устал делать фиаско"
+      "top_left_text": "Пёсик устал делать фиаско 1",
+      "top_right_text": "Пёсик устал делать фиаско 2",
+      "bottom_left_text": "Пёсик устал делать фиаско 4",
+      "bottom_right_text": "Пёсик устал делать фиаско 3"
     }
   },
   {
@@ -188,6 +210,27 @@
     }
   },
   {
+    "model": "page_blocks.blockwithtitletextandbutton",
+    "pk": 2,
+    "fields": {
+      "container_bg_color": "black",
+      "content_bg_color_major": "aliceblue",
+      "content_bg_color_minor": null,
+      "title_font_size": "30px",
+      "title_font_color": "darkred",
+      "text_font_size": "25px",
+      "text_font_color_major": null,
+      "text_font_color_minor": null,
+      "button_bg_color": "red",
+      "button_font_size": null,
+      "button_font_color": null,
+      "title": "Как сгенерировать случайный текст на русском или английском?",
+      "text": "Уже много веков в книгопечатании используется стандартный рыбный текст, начинающийся со слов Lorem ipsum, – это отрывок с вырванными фразами из труда древнеримского философа Цицерона. Именно его используют в верстке чаще всего. Однако если ваш проект ориентирован на кириллицу, этот латинский текст не подойдет. Вообще лучше использовать тексты на том языке, который будет впоследствии использоваться.",
+      "button_text": "ТЫЦ",
+      "button_action": null
+    }
+  },
+  {
     "model": "page_blocks.blockwithtitletextimageandbuttons",
     "pk": 1,
     "fields": {
@@ -208,6 +251,30 @@
       "first_button_text": "Начать учиться",
       "first_button_action": null,
       "second_button_text": "Начать бесплатно",
+      "second_button_action": null
+    }
+  },
+  {
+    "model": "page_blocks.blockwithtitletextimageandbuttons",
+    "pk": 2,
+    "fields": {
+      "container_bg_color": "indianred",
+      "content_bg_color_major": null,
+      "content_bg_color_minor": null,
+      "title_font_size": "100px",
+      "title_font_color": "white",
+      "text_font_size": null,
+      "text_font_color_major": "white",
+      "text_font_color_minor": null,
+      "button_bg_color": "white",
+      "button_font_size": null,
+      "button_font_color": "black",
+      "images": "images/1286513_dirtbike-dirt-bike-rider-svg-transparent-png.png",
+      "title": "Dirt bike",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet nulla ut orci elementum dignissim. Donec convallis enim in tortor volutpat fermentum. Praesent id accumsan erat. Etiam at ligula tortor. Proin at tellus vitae nisi maximus blandit. Sed non viverra nulla. Maecenas sodales et ligula sit amet convallis.",
+      "first_button_text": "Кнопка",
+      "first_button_action": null,
+      "second_button_text": "Тоже кнопка",
       "second_button_action": null
     }
   }
